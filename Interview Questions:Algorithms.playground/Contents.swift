@@ -11,3 +11,19 @@ import UIKit
 //6 - ViewDidDisAppear - Called after the contentview is removed from app view hierarchy
 //7 - ViewDidLayoutSubviews - called when the contentview bound change. but BEFORE it lays out its subviews [Rotating from potrait to landscape]
 //8 - ViewWillLayoutSubviews - called when the contentview bound change. but AFTER it lays out its subviews [Rotating from potrait to landscape]
+
+
+//MARK:- What to ask interviewers
+//What is the company app technology stack -perctange of objective-c/ Swift ,,any plan for conversion and how soon Arcthecture, api type
+//What technology do they use on the backend - opportunities to learn maybe 3 % of my time in order to have an overall understanding of the sytem
+//The team - How big the team is , The experience level./Sperturm of the team mix team is important(learning and teaching)
+//Career Growth - Like ios team lead(is promotion from within / external)
+// Where the product is in its life cycle in order to prepare my mind on what i will be work on
+// Code or storyboard - and the development practices they use to prevent pitfalls in it
+
+
+// Final Interview
+//- Talks aboutt a blog on their site/twitter feeds/ linkedin / tech guy on fasinating questions (in general intersting conversation
+//Do research on ur interviewer before going into the interview
+// Download the app - study it throughly , reversing engineering, ask questions around it
+// Suggestions on how u will imporove things -from a user prespective or developers

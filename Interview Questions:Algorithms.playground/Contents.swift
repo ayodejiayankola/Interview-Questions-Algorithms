@@ -16,7 +16,7 @@ import UIKit
 //MARK:- What to ask interviewers
 //What is the company app technology stack -perctange of objective-c/ Swift ,,any plan for conversion and how soon Arcthecture, api type
 //What technology do they use on the backend - opportunities to learn maybe 3 % of my time in order to have an overall understanding of the sytem
-//The team - How big the team is , The experience level./Sperturm of the team mix team is important(learning and teaching)
+//The team - How big the team is , The experience level./Sperturm of the team mix team is important(learning and teaching)/Remote or hybrid or full in housse
 //Career Growth - Like ios team lead(is promotion from within / external)
 // Where the product is in its life cycle in order to prepare my mind on what i will be work on
 // Code or storyboard - and the development practices they use to prevent pitfalls in it
@@ -27,3 +27,8 @@ import UIKit
 //Do research on ur interviewer before going into the interview
 // Download the app - study it throughly , reversing engineering, ask questions around it
 // Suggestions on how u will imporove things -from a user prespective or developers
+
+
+//FAme is the position of a uiview relative to its super view - (x, y , w , h)
+//Bounds - its position relative to its own coordinate - (0,0, w, h) - upper left
+

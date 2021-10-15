@@ -29,6 +29,23 @@ import UIKit
 // Suggestions on how u will imporove things -from a user prespective or developers
 
 
-//FAme is the position of a uiview relative to its super view - (x, y , w , h)
+//MARK:- fame is the position of a uiview relative to its super view - (x, y , w , h)
 //Bounds - its position relative to its own coordinate - (0,0, w, h) - upper left
 
+//Concurrency is doing multiple task at the same time
+//This tasks are executed on a thread
+//Main thread is speeding and clean because that is where the ui task is performed on
+//Time heavy task is done on the background thread to prevent freezing of ui
+// Grand central Dispatch and NS Operations Queues - an api built on this threading to make work easier - handing all the heavy lifting of creating and managing thread for us.
+//Queues - FIFO - First In First Out - Serial and concurrent queues
+// 1 Serial Queue - Main
+// 4 concurrent Queues - Background
+//DispatchQueue.main.asyc {
+//self.tableview.reloadData()
+//}
+
+// Background
+//qos - quality of service
+// DispatchQueue.global(qos: .background).async {
+//code to run on background queue
+//}

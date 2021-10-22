@@ -32,6 +32,7 @@ import UIKit
 //MARK:- fame is the position of a uiview relative to its super view - (x, y , w , h)
 //Bounds - its position relative to its own coordinate - (0,0, w, h) - upper left
 
+//MARK:- CONCURRENCY AND THREADING
 //Concurrency is doing multiple task at the same time
 //This tasks are executed on a thread
 //Main thread is speeding and clean because that is where the ui task is performed on
@@ -40,7 +41,7 @@ import UIKit
 //Queues - FIFO - First In First Out - Serial and concurrent queues
 // 1 Serial Queue - Main
 // 4 concurrent Queues - Background
-//DispatchQueue.main.asyc {
+//DispatchQueue.main.async {
 //self.tableview.reloadData()
 //}
 
@@ -49,3 +50,85 @@ import UIKit
 // DispatchQueue.global(qos: .background).async {
 //code to run on background queue
 //}
+
+
+//MARK:-  Swift Optionals  - Unwrapping - Guard, If Let, Chaining, Force
+// Optionals allows you to write flexible and more safer code
+var optionalNumber: Int?
+//optionalNumber = 25
+// IF LET - Saftely unwrapping
+if let number = optionalNumber {
+    print("I have a value, it is \(number)")
+} else {
+    print("I am empty")
+}
+
+// GUARD - Provides an early exit out of the statement if nil
+func tripleNumber(number: Int?) {
+    guard let number = number else {
+        print("Exiting Function")
+        return
+    }
+    print("My tripled number is \(number * 3)")
+
+}
+tripleNumber(number: optionalNumber)
+
+
+// FORCED UNWRAPPING -
+
+// let forcedNumber = optionalNumber!
+
+
+
+
+//OPTIONAL CHAINING - only use on object that has properties
+
+struct Device {
+    var type: String
+    var price: Float
+    var color: String
+}
+
+
+var myPhone: Device?
+myPhone = Device(type: "Phonr", price: 756.0, color: "Red")
+let devicePrice = myPhone?.price
+
+if let devicePrice = devicePrice{
+let total = devicePrice + 8.99
+    print(total)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

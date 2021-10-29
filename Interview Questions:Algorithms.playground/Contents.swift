@@ -54,35 +54,58 @@ import UIKit
 
 //MARK:-  Swift Optionals  - Unwrapping - Guard, If Let, Chaining, Force
 // Optionals allows you to write flexible and more safer code
-var optionalNumber: Int?
-//optionalNumber = 25
-// IF LET - Saftely unwrapping
-if let number = optionalNumber {
-    print("I have a value, it is \(number)")
-} else {
-    print("I am empty")
-}
-
-// GUARD - Provides an early exit out of the statement if nil
-func tripleNumber(number: Int?) {
-    guard let number = number else {
-        print("Exiting Function")
-        return
-    }
-    print("My tripled number is \(number * 3)")
-
-}
-tripleNumber(number: optionalNumber)
-
-
-// FORCED UNWRAPPING -
-
-// let forcedNumber = optionalNumber!
-
-
-
-
-//OPTIONAL CHAINING - only use on object that has properties
+//var optionalNumber: Int?
+////optionalNumber = 25
+//// IF LET - Saftely unwrapping
+//if let number = optionalNumber {
+//    print("I have a value, it is \(number)")
+//} else {
+//    print("I am empty")
+//}
+//
+//// GUARD - Provides an early exit out of the statement if nil
+//func tripleNumber(number: Int?) {
+//    guard let number = number else {
+//        print("Exiting Function")
+//        return
+//    }
+//    print("My tripled number is \(number * 3)")
+//
+//}
+//tripleNumber(number: optionalNumber)
+//
+//
+//// FORCED UNWRAPPING -
+//
+//// let forcedNumber = optionalNumber!
+//
+//
+//
+//
+////OPTIONAL CHAINING - only use on object that has properties
+//
+//struct Device {
+//    var type: String
+//    var price: Float
+//    var color: String
+//}
+//
+//
+//var myPhone: Device?
+//myPhone = Device(type: "Phonr", price: 756.0, color: "Red")
+//let devicePrice = myPhone?.price
+//
+//if let devicePrice = devicePrice{
+//let total = devicePrice + 8.99
+//    print(total)
+//
+//}
+//
+//
+//
+//
+//// MARK:- Filter and Map
+////: Playground - noun: a place where people can play
 
 struct Device {
     var type: String
@@ -90,45 +113,50 @@ struct Device {
     var color: String
 }
 
+var myiMacPro       = Device(type: "iMac Pro", price: 4999.00, color: "Space Grey")
+var myiPhone6Plus   = Device(type: "iPhone", price: 799.00, color: "White")
+var myiPhone7       = Device(type: "iPhone", price: 699.00, color: "Black")
+var myiPad          = Device(type: "iPad", price: 599.00, color: "Space Grey")
+var myAppleWatch    = Device(type: "Apple Watch", price: 349.00, color: "Space Grey")
+var myAppleTV       = Device(type: "Apple TV", price: 199.00, color: "Black")
 
-var myPhone: Device?
-myPhone = Device(type: "Phonr", price: 756.0, color: "Red")
-let devicePrice = myPhone?.price
+let myDevices = [myiMacPro, myiPhone6Plus, myiPhone7, myiPad, myAppleWatch, myAppleTV]
 
-if let devicePrice = devicePrice{
-let total = devicePrice + 8.99
-    print(total)
 
+// FILTER
+
+let iPhones = myDevices.filter({ $0.type == "iPhone"})
+
+var myPhones: [Device] = []
+
+for device in myDevices {
+    if device.type == "iPhone" {
+        myPhones.append(device)
+    }
 }
 
 
 
 
 
+// MAP
+let canadianPrices: [Float] = myDevices.map({ $0.price * 1.2})
+print(canadianPrices)
 
 
 
 
 
+// REDUCE
 
+let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
+print(totalCanadianPrice)
 
+var totalPrice: Float = 0.0
 
+for price in canadianPrices {
+    totalPrice += price
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(totalPrice)
 

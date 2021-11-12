@@ -160,3 +160,32 @@ for price in canadianPrices {
 
 print(totalPrice)
 
+// MARK:- Classes versus Struct
+/*Classes are  refrenced type  while structs are  value type (passed around by copies)*/
+
+class MackBook {
+    var year: Int
+    var color: String
+    init(year:Int, color: String) {
+        self.year = year
+        self.color = color
+    }
+}
+
+let myMacBook = MackBook(year: 2016, color: "Black")
+let ayoMacBackBook = myMacBook
+
+ayoMacBackBook.color = "Blue"
+print(ayoMacBackBook)
+
+struct iphone {
+    var number: Int
+    var color: String
+    
+}
+
+let iphoneOwner = iphone(number: 8, color: "Grey")
+var stolenIphone = iphoneOwner
+stolenIphone.color = "Blue"
+
+print(stolenIphone.color)

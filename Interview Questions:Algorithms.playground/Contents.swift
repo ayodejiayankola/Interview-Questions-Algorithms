@@ -107,58 +107,58 @@ import UIKit
 //// MARK:- Filter and Map
 ////: Playground - noun: a place where people can play
 
-struct Device {
-    var type: String
-    var price: Float
-    var color: String
-}
-
-var myiMacPro       = Device(type: "iMac Pro", price: 4999.00, color: "Space Grey")
-var myiPhone6Plus   = Device(type: "iPhone", price: 799.00, color: "White")
-var myiPhone7       = Device(type: "iPhone", price: 699.00, color: "Black")
-var myiPad          = Device(type: "iPad", price: 599.00, color: "Space Grey")
-var myAppleWatch    = Device(type: "Apple Watch", price: 349.00, color: "Space Grey")
-var myAppleTV       = Device(type: "Apple TV", price: 199.00, color: "Black")
-
-let myDevices = [myiMacPro, myiPhone6Plus, myiPhone7, myiPad, myAppleWatch, myAppleTV]
-
-
-// FILTER
-
-let iPhones = myDevices.filter({ $0.type == "iPhone"})
-
-var myPhones: [Device] = []
-
-for device in myDevices {
-    if device.type == "iPhone" {
-        myPhones.append(device)
-    }
-}
-
-
-
-
-
-// MAP
-let canadianPrices: [Float] = myDevices.map({ $0.price * 1.2})
-print(canadianPrices)
+//struct Device {
+//    var type: String
+//    var price: Float
+//    var color: String
+//}
+//
+//var myiMacPro       = Device(type: "iMac Pro", price: 4999.00, color: "Space Grey")
+//var myiPhone6Plus   = Device(type: "iPhone", price: 799.00, color: "White")
+//var myiPhone7       = Device(type: "iPhone", price: 699.00, color: "Black")
+//var myiPad          = Device(type: "iPad", price: 599.00, color: "Space Grey")
+//var myAppleWatch    = Device(type: "Apple Watch", price: 349.00, color: "Space Grey")
+//var myAppleTV       = Device(type: "Apple TV", price: 199.00, color: "Black")
+//
+//let myDevices = [myiMacPro, myiPhone6Plus, myiPhone7, myiPad, myAppleWatch, myAppleTV]
+//
+//
+//// FILTER
+//
+//let iPhones = myDevices.filter({ $0.type == "iPhone"})
+//
+//var myPhones: [Device] = []
+//
+//for device in myDevices {
+//    if device.type == "iPhone" {
+//        myPhones.append(device)
+//    }
+//}
 
 
 
 
 
-// REDUCE
+//// MAP
+//let canadianPrices: [Float] = myDevices.map({ $0.price * 1.2})
+//print(canadianPrices)
+//
+//
+//
+//
+//
+//// REDUCE
+//
+//let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
+//print(totalCanadianPrice)
+//
+//var totalPrice: Float = 0.0
+//
+//for price in canadianPrices {
+//    totalPrice += price
+//}
 
-let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
-print(totalCanadianPrice)
-
-var totalPrice: Float = 0.0
-
-for price in canadianPrices {
-    totalPrice += price
-}
-
-print(totalPrice)
+//print(totalPrice)
 
 // MARK:- Classes versus Struct
 /*Classes are  refrenced type  while structs are  value type (passed around by copies)*/
@@ -189,3 +189,40 @@ var stolenIphone = iphoneOwner
 stolenIphone.color = "Blue"
 
 print(stolenIphone.color)
+
+// MARK:- Communication Patterns: Delegates and Protocol
+/* How two views can communiate with one another - delegate and protocol is a one to one communication (one view to one view) while notification and oberver is a one to many communication(one observer to many notification
+ Boss - Selection Screen - Know all information
+ Intern - Receiver Screen - Receives All informations and acts on orders
+ */
+//
+//protocol sideSelectionDelegate{
+//    // Command list for my intern
+//    func didTapChoice(name: String)
+//}
+//class Boss {
+//    
+//    //A variable that holds the delegate - intern representative
+//    var selectionDelegate: sideSelectionDelegate!
+//
+//    
+//    //An order to the representative based on an action like button click on table view cell scroll
+//    selectionDelegate.didTapChoice(name: "Pass to intern Screen")
+//}
+//
+//class Intern {
+//    
+//    // call the selectionDelegate where class Boss is instantiated on called in this class
+//    // Intern say i want to be the receiver
+//    BossVc.selectionDelegate = self
+//    
+//    
+//}
+//
+//// Intern needs to conform to delegate - like intern getting a job
+//// It can also be called constantly in certain secenro like tableview cell scrolling
+//extension Intern: sideSelectionDelegate {
+//    func didTapChoice(name: String) {
+//        anActionToShowLabel = name
+//    }
+//}
